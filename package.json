@@ -1,0 +1,19 @@
+{
+  "name": "xboxuiwindows",
+  "version": "3.0.0",
+  "description": "xbox ui for computers with controllers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Vince LINISE",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5"
+  }
+}

@@ -1,0 +1,337 @@
+body {
+    background-color: #000;
+    overflow: hidden;
+
+    cursor: none !important;
+}
+
+:root {
+    --theme-color: #14b413;
+}
+
+* {
+    font-family: 'Segoe UI Variable', 'Segoe UI Variable Static Text', 'Segoe UI', sans-serif;
+    margin: 0;
+    color: white;
+}
+
+.wallpaper {
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#dashboard {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%);
+    z-index: 99;
+    overflow: hidden;
+    display: none;
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+
+    aspect-ratio: 16 / 9 !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+#profile {
+    position: absolute;
+    left: 116px;
+    top: 67px;
+    display: flex;
+    align-items: center;
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+#profilepic {
+    border-radius: 300px;
+    width: 56px;
+    height: 56px;
+}
+
+#profile div {
+    margin-left: 16px;
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-delay: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+#profile div h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.015em;
+
+    color: #FFFFFF;
+    margin-top: -1px;
+}
+
+#profile div p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 31px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.015em;
+
+    color: #FFFFFF99;
+
+    margin-top: -5px;
+}
+
+#time {
+    font-family: "Bahnschrift";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.015em;
+
+    color: #FFFFFF;
+
+    position: absolute;
+    top: 71px;
+    right: 105px;
+}
+
+#gamelist {
+    margin-top: 220px;
+    margin-left: 104px;
+    display: flex;
+    align-items: flex-end;
+    height: 400px;
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.game {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin-left: 16px;
+    background-color: #00000099;
+    transition: transform 0.3s;
+    background-size: cover;
+    background-position: center;
+
+    backdrop-filter: blur(24px) !important;
+}
+
+.latest {
+    width: 380px;
+    height: 380px;
+    margin-left: 0px;
+    margin-right: calc(52px - 16px);
+}
+
+.selected {
+    outline: 3px solid var(--theme-color);
+    box-shadow: 0px 5px 10px var(--theme-color);
+}
+
+#startup {
+    z-index: 999999999;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes new-notification {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 30px;
+    }
+}
+
+@keyframes new-notification-end {
+    0% {
+        bottom: 30px;
+        opacity: 100%;
+    }
+    99% {
+        bottom: 0px;
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.new-notification {
+    position: fixed;
+    left: 40%;
+    transform: translate(0, -40%);
+    bottom: 30px;
+
+    width: 360px;
+
+    background-color: #303030;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+
+    align-items: center;
+
+    animation: new-notification 0.5s 0s forwards cubic-bezier(0,0,0,1), new-notification-end 0.5s 4s forwards cubic-bezier(0,0,1,0);
+}
+
+.not_img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@keyframes not_sub {
+    0% {
+        transform: translate(0px, 30px);
+        opacity: 0%;
+    }
+    100% {
+        transform: translate(0px, 0px);
+        opacity: 100%;
+    }
+}
+
+.not_txt {
+    color: #fff;
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 10px;
+
+    opacity: 0%;
+    animation: not_sub;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0,0,0,1);
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes log {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes log-end {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+.login {
+    position: fixed;
+    left: 40%;
+    transform: translate(0, -40%);
+    bottom: 50px;
+    width: 360px;
+
+    background-color: var(--theme-color);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+
+    align-items: center;
+    overflow: hidden;
+    animation: log 0.6s 0s forwards cubic-bezier(.57,-0.01,0,1.01), log-end 0.3s 4s forwards cubic-bezier(0,0,1,0);
+}
+
+@keyframes log_img {
+    0% {
+        margin-left: -60px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+
+.log_img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 300px;
+    margin-left: -60px;
+
+    animation: log_img;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0,0,0,1);
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
+
+.log_txt {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+#fps {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 999999999999999999999999999999999;
+    padding: 10px;
+    background-color: #00000099;
+    border-radius: 5px;
+    font-family: "Consolas";
+    display: none;
+}

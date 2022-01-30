@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Xbox Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="notification.css">
+    </head>
+    <body>
+        <p id="fps"></p>
+
+        <video src="assets/startup.webm" id="startup" autoplay></video>
+
+        <video src="" id="wallpaper" class="wallpaper" autoplay loop muted></video>
+        <div id="dashboard">
+            <div id="profile">
+                <img id="profilepic">
+                <div>
+                    <h3 id="gamertag"></h3>
+                    <p id="gamerdescription"></p>
+                </div>
+            </div>
+
+            <p id="time"></p>
+
+            <div id="gamelist">
+                <div class="game latest" id="game-0"></div>
+                <div class="game" id="game-1"></div>
+                <div class="game" id="game-2"></div>
+                <div class="game" id="game-3"></div>
+                <div class="game" id="game-4"></div>
+                <div class="game" id="game-5"></div>
+                <div class="game" id="game-6"></div>
+            </div>
+        </div>
+
+        <script>window.$ = window.jQuery = require('jquery');</script>
+        <script src="controller.js"></script>
+        <script src="dom-navigator-1.0.3.min.js"></script>
+        <script src="xbox.js"></script>
+    </body>
+</html>
